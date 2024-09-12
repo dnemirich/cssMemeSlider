@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.container {
+    width: 80vw;
+    margin: 5vh auto 0;
+    padding: 5vh;
+    border-radius: 2vh;
+    background-color: rgb(69, 66, 66);
+}
+
+.slider {
+    display: grid;
+    row-gap: 2em;
+    grid-template-columns: 75% 25%;
+    grid-template-areas: "slide slide"
+        "caption nav";
+}
+
+.slide {
+    grid-area: slide;
+    display: flex;
+    overflow: hidden;
+}
+
+
+.slide img {
+    width: 100%;
+    height: auto;
+    /* display: none; */
+    /* transition: opacity 0.5s ease;
+    height: 80%;
+    z-index: 0; */
+}
+
+.caption {
+    grid-area: caption;
+
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 1.3rem;
+}
+
+.caption p {
+    /* display: none; */
+}
+
+.slider-navigation {
+    grid-area: nav;
+    justify-self: end;
+    height: 4rem;
+}
+
+
+#slide1:checked~#img-1 {
+    margin-left: -200px;
+}
+
+
+
+
+/* input#slide1:checked~.slider .slide #img-1,
+input#slide1:checked~.slider .caption #caption1 {
+    display: block;
+}
+
+input#slide2:checked~.slider .slide #img-2,
+input#slide2:checked~.slider .caption #caption2 {
+    display: block;
+}
+
+input#slide3:checked~.slider .slide #img-3,
+input#slide3:checked~.slider .caption #caption3 {
+    display: block;
+}
+
+input#slide4:checked~.slider .slide #img-4,
+input#slide4:checked~.slider .caption #caption4 {
+    display: block;
+} */

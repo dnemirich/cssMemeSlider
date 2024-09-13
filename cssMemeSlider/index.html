@@ -11,24 +11,38 @@
 
 <body>
     <div class="container">
+        <input type="radio" name="radio-btn" id="slide1">
+        <input type="radio" name="radio-btn" id="slide2">
+        <input type="radio" name="radio-btn" id="slide3">
+        <input type="radio" name="radio-btn" id="slide4">
+
         <div class="slider">
-            <div class="slider-navigation">
-                <input type="radio" name="slide" id="slide1" checked>
-                <input type="radio" name="slide" id="slide2">
-                <input type="radio" name="slide" id="slide3">
-                <input type="radio" name="slide" id="slide4">
+            <div class="slides">
+                <div class="slide">
+                    <img src="./images/meme0.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./images/meme1.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <img src="./images/meme2.jpg" alt="">
+                </div>
+                <div class="slide"><img src="./images/meme4.jpg" alt="">
+                </div>
             </div>
-            <div class="slide">
-                <img id="img-1" src="./images/meme1.jpg" alt="">
-                <img id="img-2" src="./images/meme2.jpg" alt="">
-                <img id="img-3" src="./images/meme3.jpg" alt="">
-                <img id="img-4" src="./images/meme4.jpg" alt="">
-            </div>
-            <div class="caption">
-                <p id="caption1">Caption text 1</p>
-                <p id="caption2">Caption text 2</p>
-                <p id="caption3">Caption text 3</p>
-                <p id="caption4">Caption text 4</p>
+            <div class="wrapper">
+                <div class="caption">
+                    <p class="slide text">Кажется теперь мы производим круги...</p>
+                    <p class="slide text">...и философские диллеммы</p>
+                    <p class="slide text">Что происходит??</p>
+                    <p class="slide text">Мы теперь и такое выпускаем?</p>
+                </div>
+                <div class="slider-navigation">
+                    <label for="slide1" class="nav-item"><span></span></label>
+                    <label for="slide2" class="nav-item"><span></span></label>
+                    <label for="slide3" class="nav-item"><span></span></label>
+                    <label for="slide4" class="nav-item"><span></span></label>
+                </div>
             </div>
 
         </div>

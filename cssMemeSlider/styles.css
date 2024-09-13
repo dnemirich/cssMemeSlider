@@ -8,79 +8,104 @@
 
 
 .container {
-    width: 80vw;
+    width: 75vw;
+    height: 65vh;
     margin: 5vh auto 0;
     padding: 5vh;
     border-radius: 2vh;
-    background-color: rgb(69, 66, 66);
+    background-color: rgb(39, 39, 39);
 }
 
 .slider {
-    display: grid;
-    row-gap: 2em;
-    grid-template-columns: 75% 25%;
-    grid-template-areas: "slide slide"
-        "caption nav";
-}
-
-.slide {
-    grid-area: slide;
     display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    height: 100%;
+    width: 100%;
     overflow: hidden;
 }
 
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    width: 100%;
+    transition: 0.4s ease-in-out;
+}
 
 .slide img {
-    width: 100%;
-    height: auto;
-    /* display: none; */
-    /* transition: opacity 0.5s ease;
-    height: 80%;
-    z-index: 0; */
+    object-fit: cover;
 }
 
 .caption {
-    grid-area: caption;
+    display: flex;
+    overflow: hidden;
+    width: 70%;
 
     color: white;
     font-family: Helvetica, sans-serif;
     font-size: 1.3rem;
 }
 
-.caption p {
-    /* display: none; */
+.text {
+    flex-shrink: 0;
 }
 
 .slider-navigation {
-    grid-area: nav;
-    justify-self: end;
-    height: 4rem;
+    display: flex;
+
 }
 
-
-#slide1:checked~#img-1 {
-    margin-left: -200px;
+.nav-item {
+    padding: 0.5rem;
 }
 
+.nav-item>span {
+    display: inline-block;
+    border: 0.1rem solid #b342ff;
+    background-color: #b342ff;
 
-
-
-/* input#slide1:checked~.slider .slide #img-1,
-input#slide1:checked~.slider .caption #caption1 {
-    display: block;
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-input#slide2:checked~.slider .slide #img-2,
-input#slide2:checked~.slider .caption #caption2 {
-    display: block;
+.nav-item>span:hover {
+    background-color: white;
+    border-color: white;
 }
 
-input#slide3:checked~.slider .slide #img-3,
-input#slide3:checked~.slider .caption #caption3 {
-    display: block;
+input#slide1:checked~.slider .slider-navigation label[for="slide1"] span,
+input#slide2:checked~.slider .slider-navigation label[for="slide2"] span,
+input#slide3:checked~.slider .slider-navigation label[for="slide3"] span,
+input#slide4:checked~.slider .slider-navigation label[for="slide4"] span {
+    background-color: unset;
 }
 
-input#slide4:checked~.slider .slide #img-4,
-input#slide4:checked~.slider .caption #caption4 {
-    display: block;
-} */
+input#slide1:checked~.slider .slide {
+    transform: translateX(0);
+}
+
+input#slide2:checked~.slider .slide {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked~.slider .slide {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked~.slider .slide {
+    transform: translateX(-300%);
+}

@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+.container {
+    max-width: 70rem;
+    margin: 10rem auto 0;
+    padding: 4vw;
+
+    background-color: rgb(39, 39, 39);
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    width: 100%;
+    transition: 0.4s ease-in-out;
+}
+
+.slide.img {
+    max-width: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.slide.img>img {
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.caption {
+    display: flex;
+    overflow: hidden;
+    width: 70%;
+
+    color: white;
+    font-family: Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+.text {
+    flex-shrink: 0;
+}
+
+.slider-navigation {
+    display: flex;
+    align-self: flex-start;
+
+}
+
+.nav-item {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.nav-item>span {
+    display: inline-block;
+    border: 0.1rem solid #b342ff;
+    background-color: #b342ff;
+
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+}
+
+.nav-item:hover>span {
+    background-color: white;
+    border-color: white;
+}
+
+input#slide1:checked~.slider .slider-navigation label[for="slide1"] span,
+input#slide2:checked~.slider .slider-navigation label[for="slide2"] span,
+input#slide3:checked~.slider .slider-navigation label[for="slide3"] span,
+input#slide4:checked~.slider .slider-navigation label[for="slide4"] span {
+    background-color: unset;
+}
+
+input#slide1:checked~.slider .slide {
+    transform: translateX(0);
+}
+
+input#slide2:checked~.slider .slide {
+    transform: translateX(-100%);
+}
+
+input#slide3:checked~.slider .slide {
+    transform: translateX(-200%);
+}
+
+input#slide4:checked~.slider .slide {
+    transform: translateX(-300%);
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .container {
+        margin: 10rem 5rem 0;
+    }
+
+    .caption {
+        font-size: 1.5rem;
+        align-self: flex-start;
+    }
+
+    .slider {
+        gap: 1rem;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .slider-navigation {
+        order: -1;
+        align-self: center;
+    }
+}
